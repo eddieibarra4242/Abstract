@@ -66,6 +66,10 @@
       <AdditionalLibraryDirectories>$(SolutionDir)deps\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32.lib;glfw3dll.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)deps\bin\glfw3.dll" "$(OutputPath)"
+copy "$(SolutionDir)deps\bin\glew32.dll" "$(OutputPath)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -85,6 +89,10 @@
       <AdditionalLibraryDirectories>$(SolutionDir)deps\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32.lib;glfw3dll.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)deps\bin\glfw3.dll" "$(OutputPath)"
+copy "$(SolutionDir)deps\bin\glew32.dll" "$(OutputPath)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ProjectReference Include="..\Abstract\Abstract.vcxproj">
