@@ -119,7 +119,7 @@
       <AdditionalDependencies>glew32.lib;glew32s.lib;glfw3.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>cd /d $(OutputPath) &amp;&amp; copy Abstract.dll "../Game"</Command>
+      <Command>cd /d $(OutputPath) &amp;&amp; copy Abstract.dll "../Game/Abstract.dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -145,7 +145,7 @@
       <AdditionalDependencies>glew32.lib;glew32s.lib;glfw3.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>cd /d $(OutputPath) &amp;&amp; copy Abstract.dll "../Game"</Command>
+      <Command>cd /d $(OutputPath) &amp;&amp; copy Abstract.dll "../Game/Abstract.dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
