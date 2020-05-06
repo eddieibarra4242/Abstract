@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="src\Abstract.h" />
+    <ClInclude Include="src\Abstract\core\Application.h" />
+    <ClInclude Include="src\Abstract\core\Platform.h" />
+    <ClInclude Include="src\Abstract\core\CoreEngine.h" />
+    <ClInclude Include="src\Abstract\core\Debug.h" />
+    <ClInclude Include="src\Abstract\core\Time.h" />
+    <ClInclude Include="src\Abstract\ECS\Ecs.h" />
+    <ClInclude Include="src\Abstract\ECS\EcsComponent.h" />
+    <ClInclude Include="src\Abstract\ECS\EcsSystem.h" />
+    <ClInclude Include="src\Abstract\input\Controls.h" />
+    <ClInclude Include="src\Abstract\input\GlfwInput.h" />
+    <ClInclude Include="src\Abstract\input\Input.h" />
+    <ClInclude Include="src\Abstract\math\Matrix.h" />
+    <ClInclude Include="src\Abstract\math\Quaternion.h" />
+    <ClInclude Include="src\Abstract\math\Transform.h" />
+    <ClInclude Include="src\Abstract\math\Vector.h" />
+    <ClInclude Include="src\Abstract\rendering\Camera.h" />
+    <ClInclude Include="src\Abstract\rendering\Lights.h" />
+    <ClInclude Include="src\Abstract\rendering\Material.h" />
+    <ClInclude Include="src\Abstract\rendering\Mesh.h" />
+    <ClInclude Include="src\Abstract\rendering\RenderEngine.h" />
+    <ClInclude Include="src\Abstract\rendering\Shader.h" />
+    <ClInclude Include="src\Abstract\rendering\Texture.h" />
+    <ClInclude Include="src\Abstract\rendering\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\dllmain.cpp" />
+    <ClCompile Include="src\Abstract\core\Application.cpp" />
+    <ClCompile Include="src\Abstract\core\CoreEngine.cpp" />
+    <ClCompile Include="src\Abstract\core\Debug.cpp" />
+    <ClCompile Include="src\Abstract\ECS\Ecs.cpp" />
+    <ClCompile Include="src\Abstract\ECS\EcsComponent.cpp" />
+    <ClCompile Include="src\Abstract\ECS\EcsSystem.cpp" />
+    <ClCompile Include="src\Abstract\input\Controls.cpp" />
+    <ClCompile Include="src\Abstract\input\GlfwInput.cpp" />
+    <ClCompile Include="src\Abstract\math\Matrix.cpp" />
+    <ClCompile Include="src\Abstract\math\Quaternion.cpp" />
+    <ClCompile Include="src\Abstract\math\Transform.cpp" />
+    <ClCompile Include="src\Abstract\rendering\Mesh.cpp" />
+    <ClCompile Include="src\Abstract\rendering\RenderEngine.cpp" />
+    <ClCompile Include="src\Abstract\rendering\Shader.cpp" />
+    <ClCompile Include="src\Abstract\rendering\Texture.cpp" />
+    <ClCompile Include="src\Abstract\rendering\Window.cpp" />
+  </ItemGroup>
+</Project>
