@@ -83,7 +83,7 @@ namespace Abstract {
 		lastKeys.clear();
 		lastMouse.clear();
 
-		for (int i = 0; i < (int)Key::NUM_KEYS; i++)
+		for (int i = 0; i < (int)Key::LAST; i++)
 		{
 			Key ind = (Key)i;
 			if (getKey(ind))
@@ -92,7 +92,7 @@ namespace Abstract {
 			}
 		}
 
-		for (int i = 0; i < (int)Mouse::NUM_MOUSEBUTTONS; i++)
+		for (int i = 0; i < (int)Mouse::BUTTON_LAST; i++)
 		{
 			Mouse ind = (Mouse)i;
 			if (getMouse(ind))

@@ -7,15 +7,15 @@ namespace Abstract {
 	class ABSTRACT_API Quaternion
 	{
 	public:
-		Quaternion(float x = 0.0f, float y = 0.0f, float z = 0.0f, float w = 1.0f) : x(x), y(y), z(z), w(w) { }
-		Quaternion(Vector3 axis, float angle);
+		Quaternion(double x = 0.0f, double y = 0.0f, double z = 0.0f, double w = 1.0f) : x(x), y(y), z(z), w(w) { }
+		Quaternion(Vector3 axis, double angle);
 
-		inline float getX() const { return x; }
-		inline float getY() const { return y; }
-		inline float getZ() const { return z; }
-		inline float getW() const { return w; }
+		inline double getX() const { return x; }
+		inline double getY() const { return y; }
+		inline double getZ() const { return z; }
+		inline double getW() const { return w; }
 
-		inline float length() const { return sqrtf(x * x + y * y + z * z + w * w); }
+		inline double length() const { return sqrt(x * x + y * y + z * z + w * w); }
 		inline Quaternion normalized() const { return this->operator/(length()); }
 
 		inline Quaternion conjugate() const
@@ -41,7 +41,7 @@ namespace Abstract {
 			return Quaternion(-x, -y, -z, w);
 		}
 
-		inline Quaternion operator+(const float& other) const
+		inline Quaternion operator+(const double& other) const
 		{
 			return Quaternion(x + other, y + other, z + other, w + other);
 		}
@@ -51,7 +51,7 @@ namespace Abstract {
 			return Quaternion(x + other.x, y + other.y, z + other.z, w + other.w);
 		}
 
-		inline Quaternion operator-(const float& other) const
+		inline Quaternion operator-(const double& other) const
 		{
 			return Quaternion(x - other, y - other, z - other, w - other);
 		}
@@ -63,20 +63,20 @@ namespace Abstract {
 
 		inline Quaternion operator*(const Quaternion& other) const
 		{
-			float w_ = w * other.w - x * other.x - y * other.y - z * other.z;
-			float x_ = x * other.w + w * other.x + y * other.z - z * other.y;
-			float y_ = y * other.w + w * other.y + z * other.x - x * other.z;
-			float z_ = z * other.w + w * other.z + x * other.y - y * other.x;
+			double w_ = w * other.w - x * other.x - y * other.y - z * other.z;
+			double x_ = x * other.w + w * other.x + y * other.z - z * other.y;
+			double y_ = y * other.w + w * other.y + z * other.x - x * other.z;
+			double z_ = z * other.w + w * other.z + x * other.y - y * other.x;
 
 			return Quaternion(x_, y_, z_, w_);
 		}
 
 		inline Quaternion operator*(const Vector3& other) const
 		{
-			float w_ = -x * other.getX() - y * other.getY() - z * other.getZ();
-			float x_ = w * other.getX() + y * other.getZ() - z * other.getY();
-			float y_ = w * other.getY() + z * other.getX() - x * other.getZ();
-			float z_ = w * other.getZ() + x * other.getY() - y * other.getX();
+			double w_ = -x * other.getX() - y * other.getY() - z * other.getZ();
+			double x_ = w * other.getX() + y * other.getZ() - z * other.getY();
+			double y_ = w * other.getY() + z * other.getX() - x * other.getZ();
+			double z_ = w * other.getZ() + x * other.getY() - y * other.getX();
 
 			return Quaternion(x_, y_, z_, w_);
 		}
@@ -88,12 +88,12 @@ namespace Abstract {
 			return Vector3(r.getX(), r.getY(), r.getZ());
 		}
 
-		inline Quaternion operator/(const float& other) const
+		inline Quaternion operator/(const double& other) const
 		{
 			return Quaternion(x / other, y / other, z / other, w / other);
 		}
 
-		constexpr void operator+=(const float& other)
+		constexpr void operator+=(const double& other)
 		{
 			this->x += other;
 			this->y += other;
@@ -109,7 +109,7 @@ namespace Abstract {
 			this->w += other.w;
 		}
 
-		constexpr void operator-=(const float& other)
+		constexpr void operator-=(const double& other)
 		{
 			this->x -= other;
 			this->y -= other;
@@ -129,10 +129,10 @@ namespace Abstract {
 
 		~Quaternion() { }
 	private:
-		float x;
-		float y;
-		float z;
-		float w;
+		double x;
+		double y;
+		double z;
+		double w;
 	};
 
 }

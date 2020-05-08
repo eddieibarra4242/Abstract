@@ -26,7 +26,7 @@ namespace Abstract {
 		inline void setScale(const Vector3& scale) { this->scale = scale; }
 
 		inline void move(const Vector3& amt) { this->position = position + amt; }
-		inline void rotate(const Vector3& axis, float angle) { rotation = (Quaternion(axis, angle) * rotation).normalized(); }
+		inline void rotate(const Vector3& axis, double angle) { rotation = (Quaternion(axis, angle) * rotation).normalized(); }
 	private:
 		Vector3 position;
 		Quaternion rotation;

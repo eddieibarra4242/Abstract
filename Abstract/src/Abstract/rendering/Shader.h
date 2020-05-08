@@ -14,7 +14,7 @@ namespace Abstract {
     class ABSTRACT_API Shader
     {
     public:
-        Shader() : program(0) { }
+        Shader() : program(0), shaders{ 0 } { }
         Shader(const std::string& filename) : Shader(filename + ".vert", filename + ".frag") {}
         Shader(const std::string& vertexFile, const std::string& fragmentFile);
 
@@ -41,7 +41,15 @@ namespace Abstract {
         inline void sendMatrix4(const std::string& name, const Matrix4& data)
         {
             addUniform(name);
-            glUniformMatrix4fv(uniforms[name], 1, GL_FALSE, data.getData());
+            float* convertBlock = (float*)malloc(16 * sizeof(float));
+            
+            for (uint64_t i = 0; i < 16; i++)
+            {
+                convertBlock[i] = data.getData()[i];
+            }
+            
+            glUniformMatrix4fv(uniforms[name], 1, GL_FALSE, convertBlock);
+            free(convertBlock);
         }
 
         virtual ~Shader();

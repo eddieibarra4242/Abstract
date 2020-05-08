@@ -33,11 +33,6 @@ private:
 
 TestGame::TestGame(const Window* context) : Application(), getter(), meshRenderer(), mover(4), looker(6)
 {
-	if (context == nullptr)
-	{
-
-	}
-
 	input = context->getInput();
 
 	IndexedModel floor = RenderTools::loadModelFromObj("./res/models/uvcube.obj");
@@ -128,6 +123,8 @@ Configuration* Abstract::ConfigureEngine()
 	config->title = "Test Game";
 
 	config->engineLogPriority = Debug::Priority::PROFILE;
+
+	config->vSync = false;
 
 	return config;
 }

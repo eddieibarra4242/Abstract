@@ -4,7 +4,7 @@
 
 namespace Abstract {
 
-	ABSTRACT_API enum class Mouse
+	enum class Mouse
 	{
 		BUTTON_1 = 0x0, BUTTON_2 = 0x1,
 		BUTTON_3 = 0x2, BUTTON_4 = 0x3, BUTTON_5 = 0x4,
@@ -12,12 +12,10 @@ namespace Abstract {
 		BUTTON_LAST = BUTTON_8,
 		BUTTON_LEFT = BUTTON_1,
 		BUTTON_RIGHT = BUTTON_2,
-		BUTTON_MIDDLE = BUTTON_3,
-
-		NUM_MOUSEBUTTONS = 16
+		BUTTON_MIDDLE = BUTTON_3
 	};
 
-	ABSTRACT_API enum class Key
+	enum class Key
 	{
 		SPACE = 0x20, APOSTROPHE = 0x27,
 		COMMA = 0x2C, MINUS = 0x2D, PERIOD = 0x2E,
@@ -57,12 +55,10 @@ namespace Abstract {
 		LEFT_CONTROL = 0x155, LEFT_ALT = 0x156,
 		LEFT_SUPER = 0x157, RIGHT_SHIFT = 0x158,
 		RIGHT_CONTROL = 0x159, RIGHT_ALT = 0x15A,
-		RIGHT_SUPER = 0x15B, MENU = 0x15C, LAST = MENU,
-
-		NUM_KEYS = 256
+		RIGHT_SUPER = 0x15B, MENU = 0x15C, LAST = MENU
 	};
 
-	ABSTRACT_API enum class JoyStick
+	enum class JoyStick
 	{
 		STICK_0 = 0,
 		STICK_1 = 1,

@@ -9,25 +9,25 @@ namespace Abstract {
 	struct ABSTRACT_API DirectionalLight : public ECSComponent<DirectionalLight>
 	{
 		Vector3 color;
-		float intensity;
+		double intensity = 0;
 	};
 
 	//support ranges soon
 	struct ABSTRACT_API PointLight : public ECSComponent<DirectionalLight>
 	{
 		Vector3 color;
-		float intensity;
+		double intensity = 0;
 		Vector3 attenuation;
-		float range;
+		double range = 0;
 	};
 
 	struct ABSTRACT_API SpotLight : public ECSComponent<DirectionalLight>
 	{
 		Vector3 color;
-		float intensity;
+		double intensity = 0;
 		Vector3 attenuation;
-		float range;
-		float angle;
+		double range = 0;
+		double angle = 0;
 	};
 
 }

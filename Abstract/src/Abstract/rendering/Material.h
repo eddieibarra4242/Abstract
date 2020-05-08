@@ -9,8 +9,8 @@ namespace Abstract {
 	struct ABSTRACT_API Material : public ECSComponent<Material>
 	{
 		Texture texture;
-		float specIntensity;
-		float specPower;
+		double specIntensity = 0;
+		double specPower = 0;
 	};
 
 }

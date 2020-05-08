@@ -9,14 +9,14 @@ namespace Abstract {
 
 	struct ABSTRACT_API Configuration
 	{
-		int winWidth;
-		int winHeight;
-		std::string title;
+		int winWidth = 320;
+		int winHeight = 240;
+		std::string title = "Abstract Engine";
 
 		bool verboseLogging = false;
 		Debug::Priority engineLogPriority = Debug::Priority::ERROR;
 
-		int fixedUpdateFPS = 60.0;
+		Delta fixedUpdateFPS = 60.0;
 		bool vSync = true;
 	};
 

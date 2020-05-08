@@ -77,10 +77,10 @@ namespace Abstract {
 		glEnableVertexArrayAttrib(mesh->vertexArrayObject, 2);
 		glEnableVertexArrayAttrib(mesh->vertexArrayObject, 3);
 
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, mesh->vertexSize, (GLvoid*)0);
-		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, mesh->vertexSize, (GLvoid*)12);
-		glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, mesh->vertexSize, (GLvoid*)20);
-		glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, mesh->vertexSize, (GLvoid*)32);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, (GLsizei)mesh->vertexSize, (GLvoid*)0);
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, (GLsizei)mesh->vertexSize, (GLvoid*)12);
+		glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, (GLsizei)mesh->vertexSize, (GLvoid*)20);
+		glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, (GLsizei)mesh->vertexSize, (GLvoid*)32);
 
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mesh->indexElementBuffer);
 		glDrawElements(GL_TRIANGLES, mesh->drawCount, GL_UNSIGNED_INT, 0);

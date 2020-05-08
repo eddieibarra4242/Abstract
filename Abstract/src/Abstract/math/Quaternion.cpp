@@ -2,17 +2,17 @@
 
 namespace Abstract {
 
-	Quaternion::Quaternion(Vector3 axis, float angle)
+	Quaternion::Quaternion(Vector3 axis, double angle)
 	{
-		float sin = sinf(angle / 2.0f);
-		float cos = cosf(angle / 2.0f);
+		double sin = std::sin(angle / 2.0f);
+		double cos = std::cos(angle / 2.0f);
 
 		this->x = axis.getX() * sin;
 		this->y = axis.getY() * sin;
 		this->z = axis.getZ() * sin;
 		this->w = cos;
 
-		float len = length();
+		double len = length();
 		this->x /= len;
 		this->y /= len;
 		this->z /= len;

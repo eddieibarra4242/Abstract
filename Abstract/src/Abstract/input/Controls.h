@@ -7,15 +7,15 @@ namespace Abstract {
 
 	struct ABSTRACT_API Inputs : public ECSComponent<Inputs>
 	{
-		IInput* input;
+		IInput* input = nullptr;
 
-		Key forward;
-		Key back;
-		Key left;
-		Key right;
+		Key forward = Key::A;
+		Key back = Key::A;
+		Key left = Key::A;
+		Key right = Key::A;
 
-		Mouse lock;
-		Mouse unlock;
+		Mouse lock = Mouse::BUTTON_1;
+		Mouse unlock = Mouse::BUTTON_1;
 	};
 
 	class ABSTRACT_API FreeMove : public BaseECSSystem

@@ -10,8 +10,8 @@ namespace Abstract {
 	public:
 		Matrix4() : m() { setIdentity(); }
 
-		inline float get(int x, int y) const { return m[x][y]; }
-		inline void set(float v, int x, int y) { this->m[x][y] = v; }
+		inline double get(int x, int y) const { return m[x][y]; }
+		inline void set(double v, int x, int y) { this->m[x][y] = v; }
 
 		Matrix4& setIdentity();
 
@@ -19,9 +19,9 @@ namespace Abstract {
 		Matrix4& setRotation(Quaternion rotation);
 		Matrix4& setScale(Vector3 scale);
 
-		Matrix4& setPerspective(float fov, float ar, float near, float far);
+		Matrix4& setPerspective(double fov, double ar, double near, double far);
 
-		inline const float* getData() const { return &m[0][0]; }
+		inline const double* getData() const { return &m[0][0]; }
 
 		inline Matrix4 operator*(const Matrix4& other) const
 		{
@@ -44,7 +44,7 @@ namespace Abstract {
 
 		~Matrix4() { }
 	private:
-		float m[4][4];
+		double m[4][4];
 	};
 
 }
