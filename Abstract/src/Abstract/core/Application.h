@@ -7,6 +7,19 @@ namespace Abstract {
 
 	class ABSTRACT_API Window;
 
+	struct ABSTRACT_API Configuration
+	{
+		int winWidth;
+		int winHeight;
+		std::string title;
+
+		bool verboseLogging = false;
+		Debug::Priority engineLogPriority = Debug::Priority::ERROR;
+
+		int fixedUpdateFPS = 60.0;
+		bool vSync = true;
+	};
+
 	class ABSTRACT_API Application
 	{
 	public:
@@ -48,6 +61,6 @@ namespace Abstract {
 		ECSSystemList renderSystems;
 	};
 
-	Window* CreateWindow();
-	Application* CreateApplication();
+	Configuration* ConfigureEngine();
+	Application* CreateApplication(const Window* context);
 }

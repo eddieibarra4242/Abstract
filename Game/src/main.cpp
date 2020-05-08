@@ -6,12 +6,10 @@
 
 using namespace Abstract;
 
-Window* context = nullptr;
-
 class TestGame : public Application
 {
 public:
-	TestGame();
+	TestGame(const Window* context);
 	~TestGame() { }
 protected:
 	virtual void update(Delta delta) override;
@@ -33,11 +31,11 @@ private:
 	EntityHandle tri2;
 };
 
-TestGame::TestGame() : Application(), getter(), meshRenderer(), mover(4), looker(6)
+TestGame::TestGame(const Window* context) : Application(), getter(), meshRenderer(), mover(4), looker(6)
 {
 	if (context == nullptr)
 	{
-		CreateWindow();
+
 	}
 
 	input = context->getInput();
@@ -121,19 +119,20 @@ void TestGame::render(Delta delta)
 
 }
 
-Window* Abstract::CreateWindow()
+Configuration* Abstract::ConfigureEngine()
 {
-	if (context == nullptr)
-	{
-		context = new Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Test Game");
-	}
+	Configuration* config = new Configuration();
 
-	return context;
+	config->winWidth = WINDOW_WIDTH;
+	config->winHeight = WINDOW_HEIGHT;
+	config->title = "Test Game";
+
+	config->engineLogPriority = Debug::Priority::PROFILE;
+
+	return config;
 }
 
-Application* Abstract::CreateApplication()
-{
-	Debug::setPriority(Debug::Priority::PROFILE);
-
-	return new TestGame();
+Application* Abstract::CreateApplication(const Window* context)
+{	
+	return new TestGame(context);
 }

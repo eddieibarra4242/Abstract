@@ -31,15 +31,22 @@
 
 #ifdef AB_PLATFORM_WINDOWS
 
-extern Abstract::Window* Abstract::CreateWindow();
-extern Abstract::Application* Abstract::CreateApplication();
+extern Abstract::Configuration* Abstract::ConfigureEngine();
+extern Abstract::Application* Abstract::CreateApplication(const Abstract::Window* context);
 
 int main(int args, char** argv)
 {
-	Abstract::Window* window = Abstract::CreateWindow();
-	Abstract::Application* app = Abstract::CreateApplication();
+	Abstract::Configuration* config = Abstract::ConfigureEngine();
 
-	Abstract::CoreEngine engine(window, app, 60, true);
+	Abstract::Debug::setPriority(config->engineLogPriority);
+	Abstract::Debug::showAdditionalInfo(config->verboseLogging);
+
+	Abstract::Window* window = new Abstract::Window(config->winWidth, config->winHeight, config->title);
+	Abstract::Application* app = Abstract::CreateApplication(window);
+
+	Abstract::CoreEngine engine(window, app, config->fixedUpdateFPS, config->vSync);
+	
+	delete config;
 	engine.start();
 
 	delete app;

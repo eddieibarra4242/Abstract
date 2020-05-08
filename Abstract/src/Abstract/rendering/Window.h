@@ -19,11 +19,11 @@ namespace Abstract {
 		void present();
 		bool shouldClose();
 
-		inline int getRefreshRate() { return refreshRate; }
-		inline IInput* getInput() { return input; }
+		constexpr int getRefreshRate() const { return refreshRate; }
+		constexpr IInput* getInput() const { return input; }
 
-		inline static int getWidth() { return width; }
-		inline static int getHeight() { return height; }
+		constexpr static int getWidth() { return width; }
+		constexpr static int getHeight() { return height; }
 
 		inline static void bindAsRenderTarget()
 		{
