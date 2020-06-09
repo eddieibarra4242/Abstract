@@ -69,7 +69,7 @@ namespace Abstract {
 
 			if (frameCounter >= 1.0)
 			{
-				DEBUG_LOG("Core Engine", Debug::Priority::PROFILE, "Update FPS: %d  Fixed FPS: %d Render FPS: %d\nTrue Delta: %.7f  Fixed Delta: %f  Render Delta: %f\n",
+				DEBUG_LOG("Core Engine", Debug::Priority::Profile, "Update FPS: %d  Fixed FPS: %d Render FPS: %d\nTrue Delta: %.7f  Fixed Delta: %f  Render Delta: %f\n",
 					updateFrames, fixedFrames, renderFrames, updateDelta, fixedDelta, renderDelta);
 				updateFrames = 0;
 				renderFrames = 0;

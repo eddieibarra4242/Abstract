@@ -30,7 +30,7 @@ namespace Abstract {
 		{
 			if (!BaseECSComponent::isTypeValid(componentIDs[i]))
 			{
-				DEBUG_LOG("ECS", Debug::Priority::ERROR, "'%u' is not a valid component type", componentIDs[i]);
+				DEBUG_WARN("ECS", "'%u' is not a valid component type", componentIDs[i]);
 				delete newEntity;
 				return NULL_ENTITY_HANDLE;
 			}

@@ -103,6 +103,17 @@ copy "$(SolutionDir)deps\bin\glew32.dll" "$(OutputPath)"</Command>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="res\shaders\basic.frag" />
+    <None Include="res\shaders\basic.vert" />
+    <None Include="res\shaders\def-ambient.frag" />
+    <None Include="res\shaders\def-directional.frag" />
+    <None Include="res\shaders\def-gbuf.frag" />
+    <None Include="res\shaders\def-gbuf.vert" />
+    <None Include="res\shaders\def-point.frag" />
+    <None Include="res\shaders\def-spot.frag" />
+    <None Include="res\shaders\filter-common.vert" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

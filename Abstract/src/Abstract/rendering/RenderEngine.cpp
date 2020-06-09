@@ -104,7 +104,7 @@ namespace Abstract {
 
 		if (outputTime >= 1.0)
 		{
-			DEBUG_LOG("Mesh Renderer", Debug::Priority::PROFILE, "Mesh Render Time Avg: %.10f\n", accum / (Delta)count);
+			DEBUG_LOG("Mesh Renderer", Debug::Priority::Profile, "Mesh Render Time Avg: %.10f\n", accum / (Delta)count);
 			outputTime = 0.0;
 			accum = 0.0;
 			count = 0;

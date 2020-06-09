@@ -291,7 +291,7 @@ namespace Abstract {
 				{
 					if (name != "")
 					{
-						DEBUG_LOG("Mesh Loader", Debug::Priority::ERROR, "Multiple Models in one Obj not supported! Model Name: %s", tokens[1]);
+						DEBUG_WARN("Mesh Loader", "Multiple Models in one Obj not supported! Model Name: %s", tokens[1]);
 						break;
 					}
 
@@ -360,7 +360,7 @@ namespace Abstract {
 		}
 		else
 		{
-			DEBUG_LOG("Mesh Loader", Debug::Priority::ERROR, "Obj file '%s' could not be found!", filename.c_str());
+			DEBUG_ERROR("Mesh Loader", "Obj file '%s' could not be found!", filename.c_str());
 			return IndexedModel("");
 		}
 

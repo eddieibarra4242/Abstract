@@ -65,7 +65,7 @@ namespace Abstract {
 			}
 			else
 			{
-				DEBUG_LOG("ECS", Debug::Priority::ERROR, "System found with only Optional Components, NOT ADDING!");
+				DEBUG_WARN("ECS", "System found with only Optional Components, NOT ADDING!");
 			}
 
 			return ret;

@@ -122,7 +122,7 @@ Configuration* Abstract::ConfigureEngine()
 	config->winHeight = WINDOW_HEIGHT;
 	config->title = "Test Game";
 
-	config->engineLogPriority = Debug::Priority::PROFILE;
+	config->engineLogPriority = Debug::Priority::Profile;
 
 	config->vSync = false;
 
@@ -130,6 +130,6 @@ Configuration* Abstract::ConfigureEngine()
 }
 
 Application* Abstract::CreateApplication(const Window* context)
-{	
+{
 	return new TestGame(context);
 }

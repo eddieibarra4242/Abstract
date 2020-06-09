@@ -11,3 +11,11 @@
 #else
 	#error Platform Not Supported!
 #endif
+
+#ifdef NDEBUG
+#define DEBUG_CONFIG false
+#define RELEASE_CONFIG true
+#else
+#define DEBUG_CONFIG true
+#define RELEASE_CONFIG false
+#endif

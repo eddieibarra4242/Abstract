@@ -14,7 +14,7 @@ namespace Abstract {
 		std::string title = "Abstract Engine";
 
 		bool verboseLogging = false;
-		Debug::Priority engineLogPriority = Debug::Priority::ERROR;
+		Debug::Priority engineLogPriority = Debug::Priority::Error;
 
 		Delta fixedUpdateFPS = 60.0;
 		bool vSync = true;

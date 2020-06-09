@@ -68,7 +68,7 @@ namespace Abstract {
 		}
 		else
 		{
-			DEBUG_LOG("ECS", Debug::Priority::ERROR, "Not enough memory to copy compnent!");
+			DEBUG_ERROR("ECS", "Not enough memory to copy compnent!");
 		}
 
 		return index;

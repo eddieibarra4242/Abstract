@@ -85,7 +85,7 @@ namespace Abstract {
 
         if (uniformLocation == -1)
         {
-            DEBUG_LOG("Shader", Debug::Priority::ERROR, "Uniform %s is not being used or could not be found!", uniformName.c_str());
+            DEBUG_WARN("Shader", "Uniform %s is not being used or could not be found!", uniformName.c_str());
         }
         else
         {
@@ -112,7 +112,7 @@ namespace Abstract {
         }
         else
         {
-            DEBUG_LOG("Shader", Debug::Priority::ERROR, "Shader %s could not be found!", filename.c_str());
+            DEBUG_ERROR("Shader", "Shader %s could not be found!", filename.c_str());
         }
 
         return output;
@@ -135,7 +135,7 @@ namespace Abstract {
             else
                 glGetShaderInfoLog(shader, sizeof(error), NULL, error);
 
-            DEBUG_LOG("Shader", Debug::Priority::ERROR, "%s:\n%s", errorMessage.c_str(), error);
+            DEBUG_ERROR("Shader", "%s:\n%s", errorMessage.c_str(), error);
         }
     }
 
@@ -145,7 +145,7 @@ namespace Abstract {
 
         if (shader == 0)
         {
-            DEBUG_LOG("Shader", Debug::Priority::ERROR, "Error compiling shader type %s", (type == GL_VERTEX_SHADER ? "GL_VERTEX_SHADER" : "GL_FRAGMENT_SHADER"));
+            DEBUG_ERROR("Shader", "Error compiling shader type %s", (type == GL_VERTEX_SHADER ? "GL_VERTEX_SHADER" : "GL_FRAGMENT_SHADER"));
         }
 
         const GLchar* shaderSourceStrings[1];

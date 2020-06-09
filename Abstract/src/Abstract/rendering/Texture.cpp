@@ -16,7 +16,7 @@ namespace Abstract {
 
         if (data == NULL)
         {
-            DEBUG_LOG("Texture", Debug::Priority::ERROR, "Failed To Load File: %s", filename.c_str());
+            DEBUG_ERROR("Texture", "Failed To Load File: %s", filename.c_str());
             return;
         }
 
@@ -28,7 +28,7 @@ namespace Abstract {
 
         if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
         {
-            DEBUG_LOG("Framebuffer", Debug::Priority::ERROR, "Framebuffer creation Failed: %x", glCheckFramebufferStatus(GL_FRAMEBUFFER));
+            DEBUG_ERROR("Framebuffer", "Framebuffer creation Failed: %x", glCheckFramebufferStatus(GL_FRAMEBUFFER));
         }
 
         stbi_image_free(data);
@@ -68,7 +68,7 @@ namespace Abstract {
 
         if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
         {
-            DEBUG_LOG("Framebuffer", Debug::Priority::ERROR, "Framebuffer creation Failed: %x", glCheckFramebufferStatus(GL_FRAMEBUFFER));
+            DEBUG_ERROR("Framebuffer", "Framebuffer creation Failed: %x", glCheckFramebufferStatus(GL_FRAMEBUFFER));
         }
 
         glBindFramebuffer(GL_DRAW_FRAMEBUFFER, frameBuffer);
@@ -93,7 +93,7 @@ namespace Abstract {
 
             if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
             {
-                DEBUG_LOG("Framebuffer", Debug::Priority::ERROR, "Framebuffer creation Failed: %x", glCheckFramebufferStatus(GL_FRAMEBUFFER));
+                DEBUG_ERROR("Framebuffer", "Framebuffer creation Failed: %x", glCheckFramebufferStatus(GL_FRAMEBUFFER));
             }
         }
 
@@ -342,7 +342,7 @@ namespace Abstract {
 
         if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
         {
-            DEBUG_LOG("Framebuffer", Debug::Priority::ERROR, "Framebuffer creation Failed: %x", glCheckFramebufferStatus(GL_FRAMEBUFFER));
+            DEBUG_ERROR("Framebuffer", "Framebuffer creation Failed: %x", glCheckFramebufferStatus(GL_FRAMEBUFFER));
         }
     }
 

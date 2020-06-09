@@ -27,7 +27,6 @@
     <ClCompile Include="src\Abstract\rendering\Shader.cpp" />
     <ClCompile Include="src\Abstract\rendering\Texture.cpp" />
     <ClCompile Include="src\Abstract\rendering\Window.cpp" />
-    <ClCompile Include="src\dllmain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Abstract\core\Application.h" />

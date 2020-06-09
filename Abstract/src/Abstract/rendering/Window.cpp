@@ -11,7 +11,7 @@ namespace Abstract {
 	{
 		if (glfwInit() == GLFW_FALSE)
 		{
-			DEBUG_LOG("Window", Debug::Priority::ERROR, "GLFW Could not initialize");
+			DEBUG_ERROR("Window", "GLFW Could not initialize");
 		}
 
 		glfwDefaultWindowHints();
@@ -32,7 +32,7 @@ namespace Abstract {
 		glewExperimental = GL_TRUE;
 		if (glewInit() != GLEW_OK)
 		{
-			DEBUG_LOG("Window", Debug::Priority::ERROR, "Glew Could not initialize!");
+			DEBUG_ERROR("Window", "Glew Could not initialize!");
 		}
 
 		Window::width = width;

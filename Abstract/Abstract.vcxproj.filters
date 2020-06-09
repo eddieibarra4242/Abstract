@@ -27,7 +27,6 @@
     <ClInclude Include="src\Abstract\rendering\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\dllmain.cpp" />
     <ClCompile Include="src\Abstract\core\Application.cpp" />
     <ClCompile Include="src\Abstract\core\CoreEngine.cpp" />
     <ClCompile Include="src\Abstract\core\Debug.cpp" />

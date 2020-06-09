@@ -3,7 +3,9 @@
 #include <string>
 #include <stdio.h>
 
-#define DEBUG_LOG(category, level, message, ...) Abstract::Debug::__Log(category, level, __FILE__, __LINE__, message, ##__VA_ARGS__)
+#define DEBUG_LOG(category, level, message, ...) Debug::log(category, level, __FILE__, __LINE__, message, ##__VA_ARGS__)
+#define DEBUG_WARN(category, message, ...) Debug::log(category, Debug::Priority::Warning, __FILE__, __LINE__, message, ##__VA_ARGS__)
+#define DEBUG_ERROR(category, message, ...) Debug::log(category, Debug::Priority::Error, __FILE__, __LINE__, message, ##__VA_ARGS__)
 
 namespace Abstract {
 
@@ -12,16 +14,22 @@ namespace Abstract {
 	public:
 		enum class Priority
 		{
-			NONE,
-			ERROR,
-			TOFILE, //not implemented yet
-			PROFILE
+#ifndef NDEBUG
+			//This should never be used in a release build, this is purely for quick debug messages
+			None,
+#endif
+			Error,
+			Warning,
+			ToFile, //not implemented yet
+			Verbose,
+			Profile
 		};
+
+		static void log(const std::string& category, const Priority& p, const std::string& file, const int& line, char const* const msg, ...);
+		static void toFile(const std::string& category, const Priority& p, const std::string& file, const int& line, char const* const msg, ...); //TBI
 
 		static Priority state;
 		static bool showInfo;
-
-		static void __Log(const std::string& category, const Priority& p, const std::string& file, const int& line, char const* const msg, ...);
 
 		static void setPriority(Priority p);
 		static void showAdditionalInfo(bool showInfo);

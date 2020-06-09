@@ -1,11 +1,12 @@
 #include "Debug.h"
+#include <stdexcept>
 
 namespace Abstract {
 
-	Debug::Priority Debug::state = Debug::Priority::NONE;
+	Debug::Priority Debug::state = Debug::Priority::Error;
 	bool Debug::showInfo = false;
 
-	void Debug::__Log(const std::string& category, const Priority& p, const std::string& file, const int& line, char const* const msg, ...)
+	void Debug::log(const std::string& category, const Priority& p, const std::string& file, const int& line, char const* const msg, ...)
 	{
 		if (p > state)
 		{
@@ -17,9 +18,13 @@ namespace Abstract {
 
 		switch (p)
 		{
-		case Priority::NONE: level = "None"; break;
-		case Priority::ERROR: Stream = stderr; level = "Error"; break;
-		case Priority::PROFILE: level = "Profile"; break;
+#ifndef NDEBUG
+		case Priority::None: level = "None"; break;
+#endif
+		case Priority::Error: Stream = stderr; level = "Error"; break;
+		case Priority::Warning: Stream = stderr; level = "Warning"; break;
+		case Priority::Verbose: level = "Verbose"; break;
+		case Priority::Profile: level = "Profile"; break;
 		}
 
 		if (Debug::showInfo)
@@ -33,6 +38,11 @@ namespace Abstract {
 		vfprintf(Stream, msg, argList);
 		__crt_va_end(argList);
 		fprintf(Stream, "\n");
+
+		if (p == Priority::Error)
+		{
+			throw std::runtime_error(msg);
+		}
 	}
 
 	void Debug::setPriority(Priority p)
@@ -44,5 +54,4 @@ namespace Abstract {
 	{
 		Debug::showInfo = showInfo;
 	}
-
 }
